@@ -18,7 +18,7 @@ import javax.swing.JPanel;
 
 import com.toedter.calendar.JDateChooser;
 
-import reports.JasperByCollectionBeanData;
+import createReports.JasperByCollectionBeanData;
 
 public class showDateSelectionDialog extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;

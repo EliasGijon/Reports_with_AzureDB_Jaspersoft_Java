@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Coffee_Landscape_Table_Based" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="66519d71-4f27-4833-9a1d-c9b72e811f0c">
 	<property name="template.engine" value="tabular_template"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
@@ -68,8 +68,8 @@
 	<parameter name="year_start" class="java.lang.String"/>
 	<parameter name="month_end" class="java.lang.String"/>
 	<parameter name="year_end" class="java.lang.String"/>
-        <parameter name="REPORT_DIR" class="java.lang.String"/>
-        <parameter name="REPORT_DIR2" class="java.lang.String"/>
+	<parameter name="REPORT_DIR" class="java.lang.String"/>
+	<parameter name="REPORT_DIR2" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -186,7 +186,7 @@
 						<jr:columnFooter style="Table_CH" height="30" rowSpan="1"/>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="200" height="30" uuid="ba44cd14-7834-4beb-97f2-dc077d269404"  stretchType="RelativeToBandHeight"/>
+								<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="200" height="30" uuid="ba44cd14-7834-4beb-97f2-dc077d269404"/>
 								<textElement textAlignment="Justified" verticalAlignment="Middle">
 									<font fontName="Arial" size="12"/>
 								</textElement>
@@ -208,7 +208,7 @@
 						<jr:columnFooter style="Table_CH" height="30" rowSpan="1"/>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="200" height="30" uuid="a707671a-b8a0-4b4b-823f-e9bee8a13a1d"  stretchType="RelativeToBandHeight"/>
+								<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="200" height="30" uuid="a707671a-b8a0-4b4b-823f-e9bee8a13a1d"/>
 								<textElement textAlignment="Justified" verticalAlignment="Middle">
 									<font fontName="Arial" size="12"/>
 								</textElement>
@@ -253,7 +253,7 @@
 						<jr:columnFooter style="Table_CH" height="30" rowSpan="1"/>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="200" height="30" uuid="44e0fb87-5da9-4a8f-bc3a-039e19bfc6cf"  stretchType="RelativeToBandHeight"/>
+								<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="200" height="30" uuid="44e0fb87-5da9-4a8f-bc3a-039e19bfc6cf"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Arial" size="12"/>
 								</textElement>

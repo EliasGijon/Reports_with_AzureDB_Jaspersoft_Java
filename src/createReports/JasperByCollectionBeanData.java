@@ -1,14 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package createReports;
 
 import java.sql.PreparedStatement;
-import java.sql.Statement;
+
 import java.sql.ResultSet;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,19 +11,29 @@ import java.util.List;
 import java.util.Map;
 
 import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.view.JasperViewer;
 
+import java.sql.Statement;
+import java.sql.DriverManager;
+
+import net.sf.jasperreports.engine.JasperExportManager;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.InputStream;
 import java.io.OutputStream;
+
+import java.io.InputStream;
+
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.engine.JREmptyDataSource;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -51,7 +56,6 @@ import net.sf.jasperreports.engine.export.JRPdfExporter;
 import net.sf.jasperreports.engine.export.JRPdfExporterParameter;
 
 
-import net.sf.jasperreports.engine.JREmptyDataSource;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperExportManager;
@@ -59,11 +63,13 @@ import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-import net.sf.jasperreports.engine.design.JasperDesign;
-import net.sf.jasperreports.engine.xml.JRXmlLoader;
+
 import net.sf.jasperreports.view.JasperViewer;
 import net.sf.jasperreports.engine.export.PdfGlyphRenderer;
 import com.lowagie.*;
+import net.sf.jasperreports.engine.design.JRJdk13Compiler;
+import com.lowagie.text.pdf.FopGlyphProcessor;
+import net.sf.jasperreports.engine.export.PdfGlyphRenderer;
 
 public class JasperByCollectionBeanData {
 	//static void main(String[] args) throws JRException, FileNotFoundException
@@ -128,8 +134,8 @@ public class JasperByCollectionBeanData {
             /* Convert List to JRBeanCollectionDataSource */
             JRBeanCollectionDataSource itemsJRBean = new JRBeanCollectionDataSource(listItems);
 
-            String imagePath = System.getProperty("user.dir")+"\\src\\formatos\\coffee.jpg";
-            String imagePath2 = System.getProperty("user.dir")+"\\src\\formatos\\coffee_stain.png";
+            String imagePath = System.getProperty("user.dir")+"/src/formatos/coffee.jpg";
+            String imagePath2 = System.getProperty("user.dir")+"/src/formatos/coffee_stain.png";
             
             /* Map to hold Jasper report Parameters */
             Map<String, Object> parameters = new HashMap<String, Object>();
@@ -143,13 +149,20 @@ public class JasperByCollectionBeanData {
             parameters.put("REPORT_DIR2", imagePath2);
             
             //read jrxml file and creating jasperdesign object
-            InputStream input = getClass().getResourceAsStream("../formatos/Coffee_Landscape_Table_Based.jrxml");
-           
+            //InputStream input = getClass().getResourceAsStream("../formatos/Coffee_Landscape_Table_Based.jrxml");
+            //InputStream input = getClass().getResourceAsStream("/formatos/Coffee_Landscape_Table_Based.jrxml");
+            InputStream input = getClass().getClassLoader().getResourceAsStream("formatos/Coffee_Landscape_Table_Based.jrxml");
+
+
+            /*
+            System.out.println(input);
+            System.out.println(System.getProperty("user.dir")+"\\src\\formatos\\coffee.jpg");
+*/
             //original form in that pc 
             //InputStream input = new FileInputStream(new File("C:\\Users\\saske\\JaspersoftWorkspace\\MyReports\\Coffee_Landscape_Table_Based.jrxml"));
 
             JasperDesign jasperDesign = JRXmlLoader.load(input);
-
+  
             /*compiling jrxml with help of JasperReport class*/
             JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
 
@@ -160,7 +173,7 @@ public class JasperByCollectionBeanData {
             /*call jasper engine to display report in jasperviewer window*/
             JasperViewer.viewReport(jasperPrint);
             
-            String doc=System.getProperty("user.dir") +"\\src\\Documents\\";
+            //String doc=System.getProperty("user.dir") +"\\src\\Documents\\";
             //JasperExportManager.exportReportToPdfFile(jasperPrint, "C:/Users/Sayte Gijon/Documents/report.pdf");
 
             //System.getProperty("user.dir")+"\\src\\formatos\\coffee.jpg";

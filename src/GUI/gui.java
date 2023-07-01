@@ -3,17 +3,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import com.toedter.calendar.JCalendar;
-import com.toedter.calendar.JDateChooser;
-import reports.JasperByCollectionBeanData;
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.text.DateFormatSymbols;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 
 public class gui extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
