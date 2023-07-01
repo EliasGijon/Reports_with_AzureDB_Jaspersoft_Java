@@ -155,7 +155,7 @@ public class JasperByCollectionBeanData {
 
             /* Using jasperReport object to generate PDF */
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, new JREmptyDataSource());
-            JasperExportManager.exportReportToPdfFile(jasperPrint, "C:/Users/Sayte Gijon/Documents/report.pdf");
+            //JasperExportManager.exportReportToPdfFile(jasperPrint, "C:/Users/Sayte Gijon/Documents/report.pdf");
 
             /*call jasper engine to display report in jasperviewer window*/
             JasperViewer.viewReport(jasperPrint);

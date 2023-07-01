@@ -185,8 +185,8 @@
 						</jr:columnHeader>
 						<jr:columnFooter style="Table_CH" height="30" rowSpan="1"/>
 						<jr:detailCell style="Table_TD" height="30">
-							<textField textAdjust="StretchHeight">
-								<reportElement x="0" y="0" width="200" height="30" uuid="ba44cd14-7834-4beb-97f2-dc077d269404"/>
+							<textField>
+								<reportElement x="0" y="0" width="200" height="30" uuid="ba44cd14-7834-4beb-97f2-dc077d269404"  stretchType="RelativeToBandHeight"/>
 								<textElement textAlignment="Justified" verticalAlignment="Middle">
 									<font fontName="Arial" size="12"/>
 								</textElement>
@@ -207,8 +207,8 @@
 						</jr:columnHeader>
 						<jr:columnFooter style="Table_CH" height="30" rowSpan="1"/>
 						<jr:detailCell style="Table_TD" height="30">
-							<textField textAdjust="StretchHeight">
-								<reportElement x="0" y="0" width="200" height="30" uuid="a707671a-b8a0-4b4b-823f-e9bee8a13a1d"/>
+							<textField>
+								<reportElement x="0" y="0" width="200" height="30" uuid="a707671a-b8a0-4b4b-823f-e9bee8a13a1d"  stretchType="RelativeToBandHeight"/>
 								<textElement textAlignment="Justified" verticalAlignment="Middle">
 									<font fontName="Arial" size="12"/>
 								</textElement>
@@ -252,8 +252,8 @@
 						</jr:columnHeader>
 						<jr:columnFooter style="Table_CH" height="30" rowSpan="1"/>
 						<jr:detailCell style="Table_TD" height="30">
-							<textField textAdjust="StretchHeight">
-								<reportElement x="0" y="0" width="200" height="30" uuid="44e0fb87-5da9-4a8f-bc3a-039e19bfc6cf"/>
+							<textField>
+								<reportElement x="0" y="0" width="200" height="30" uuid="44e0fb87-5da9-4a8f-bc3a-039e19bfc6cf"  stretchType="RelativeToBandHeight"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Arial" size="12"/>
 								</textElement>
