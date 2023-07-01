@@ -1,8 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package reports;
+
+package createReports;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -13,14 +10,13 @@ public class ConnectionManager {
     //com.mysql.jdbc.Driver
     private static String username = "zckeeper"; 
     private static String password = "SecurityBad21";
-    private static Connection con;
-    private static String urlstring;
+    private static Connection con=null;
 
     public static Connection getConnection() {
         try {
             Class.forName(driverName);
             try {
-                con = DriverManager.getConnection(urlstring, username, password);
+                con = DriverManager.getConnection(url, username, password);
             } catch (SQLException ex) {
                 // log an exception. fro example:
                 System.out.println("Failed to create the database connection."); 
