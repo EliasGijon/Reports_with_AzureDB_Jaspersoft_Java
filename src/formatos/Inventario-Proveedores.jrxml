@@ -58,16 +58,12 @@
 		<queryString>
 			<![CDATA[]]>
 		</queryString>
-		<field name="id" class="java.lang.String"/>
-		<field name="producto" class="java.lang.String"/>
-		<field name="fecha" class="java.lang.String"/>
-		<field name="cantidad" class="java.lang.String"/>
+		<field name="column1" class="java.lang.String"/>
+		<field name="column2" class="java.lang.String"/>
+		<field name="column3" class="java.lang.String"/>
+		<field name="column4" class="java.lang.String"/>
 	</subDataset>
 	<parameter name="CollectionBeanParam" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
-	<parameter name="month_start" class="java.lang.String"/>
-	<parameter name="year_start" class="java.lang.String"/>
-	<parameter name="month_end" class="java.lang.String"/>
-	<parameter name="year_end" class="java.lang.String"/>
 	<parameter name="REPORT_DIR" class="java.lang.String"/>
 	<parameter name="REPORT_DIR2" class="java.lang.String"/>
 	<queryString>
@@ -100,32 +96,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="10"/>
 				</textElement>
-				<text><![CDATA[PRODUCTOS VENDIDOS PLAZO]]></text>
-			</staticText>
-			<textField>
-				<reportElement x="280" y="110" width="70" height="16" uuid="2ebea737-bb35-4679-8f17-eb6a06215c45"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$P{month_start}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="350" y="110" width="36" height="16" uuid="504dc9f7-f8a7-4b2a-8151-48cad85af59c"/>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$P{year_start}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="416" y="110" width="64" height="16" uuid="c77cea3e-4fd5-4c78-8c99-766e9372b81d"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$P{month_end}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="480" y="110" width="60" height="16" uuid="db95750f-e221-4527-83b6-5e1d1c3a5f45"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$P{year_end}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement x="386" y="110" width="30" height="16" uuid="2ecfe057-49b8-42ac-8e69-41852ccede90"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[-]]></text>
+				<text><![CDATA[INVENTARIO Y CONTACTO DEL PROVEEDOR]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -180,7 +151,7 @@
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Arial" size="14"/>
 								</textElement>
-								<text><![CDATA[ID]]></text>
+								<text><![CDATA[Nombre del Producto]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="Table_CH" height="30" rowSpan="1"/>
@@ -190,7 +161,7 @@
 								<textElement textAlignment="Justified" verticalAlignment="Middle">
 									<font fontName="Arial" size="12"/>
 								</textElement>
-								<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{column1}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -202,17 +173,17 @@
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Arial" size="14"/>
 								</textElement>
-								<text><![CDATA[Nombre del Producto]]></text>
+								<text><![CDATA[Inventario]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="Table_CH" height="30" rowSpan="1"/>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
 								<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="200" height="30" uuid="a707671a-b8a0-4b4b-823f-e9bee8a13a1d"/>
-								<textElement textAlignment="Justified" verticalAlignment="Middle">
+								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Arial" size="12"/>
 								</textElement>
-								<textFieldExpression><![CDATA[$F{producto}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{column2}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -224,17 +195,17 @@
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Arial" size="14"/>
 								</textElement>
-								<text><![CDATA[Fecha de la Venta]]></text>
+								<text><![CDATA[Proveedor]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="Table_CH" height="30" rowSpan="1"/>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
 								<reportElement x="0" y="0" width="200" height="30" uuid="d0c9331b-f0ee-4476-b01b-bb6c18c679e8"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
+								<textElement textAlignment="Justified" verticalAlignment="Middle">
 									<font fontName="Arial" size="12"/>
 								</textElement>
-								<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{column3}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -247,7 +218,7 @@
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Arial" size="14"/>
 								</textElement>
-								<text><![CDATA[Cantidad]]></text>
+								<text><![CDATA[Contacto]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="Table_CH" height="30" rowSpan="1"/>
@@ -257,7 +228,7 @@
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Arial" size="12"/>
 								</textElement>
-								<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{column4}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>

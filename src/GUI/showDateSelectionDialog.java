@@ -19,6 +19,7 @@ import javax.swing.JPanel;
 import com.toedter.calendar.JDateChooser;
 
 import createReports.JasperByCollectionBeanData;
+import createReports.Sales;
 
 public class showDateSelectionDialog extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
@@ -89,7 +90,7 @@ public class showDateSelectionDialog extends JFrame implements ActionListener {
                     month_start=month_start.toUpperCase();
                     month_end=month_end.toUpperCase();
                     
-                    JasperByCollectionBeanData reportes = new JasperByCollectionBeanData(month_start, year_start, month_end, year_end, startDateFormat,endDateFormat );
+                    Sales reportes = new Sales(month_start, year_start, month_end, year_end, startDateFormat,endDateFormat );
                     reportes.GenerarReportes();
                     dispose();
                 } else {

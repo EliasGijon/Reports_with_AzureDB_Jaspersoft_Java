@@ -1,34 +1,24 @@
 package createReports;
 
-import java.sql.PreparedStatement;
-
-import java.sql.ResultSet;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import net.sf.jasperreports.engine.JREmptyDataSource;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
 import sql_Querypack.Sales_by_Date;
 
-import java.io.InputStream;
-
-import net.sf.jasperreports.engine.design.JasperDesign;
-import net.sf.jasperreports.engine.xml.JRXmlLoader;
-import net.sf.jasperreports.engine.JREmptyDataSource;
-
-
-
-
-
-public class JasperByCollectionBeanData {
+public class Sales {
 	//static void main(String[] args) throws JRException, FileNotFoundException
     String month_start;
     String year_start;
@@ -36,17 +26,15 @@ public class JasperByCollectionBeanData {
     String year_end;
     String startDateFormat;
     String endDateFormat;
-    public JasperByCollectionBeanData(String month_start, String year_start, String month_end, String year_end, String startDateFormat, String endDateFormat){
+    public Sales(String month_start, String year_start, String month_end, String year_end, String startDateFormat, String endDateFormat){
         this.month_start=month_start;
         this.year_start=year_start;
         this.month_end=month_end;
         this.year_end=year_end;
         this.startDateFormat=startDateFormat;
         this.endDateFormat=endDateFormat;
-        //GenerarReportes();
     }
-    
-    public void GenerarReportes() {
+	public void GenerarReportes() {
     	Connection connection =null;
     	try {
     		connection = ConnectionManager.getConnection();
@@ -73,8 +61,8 @@ public class JasperByCollectionBeanData {
             ResultSet resultSet = statement.executeQuery();
 */
             /* List to hold Items */
-            Sales_by_Date as=new Sales_by_Date(startDateFormat,endDateFormat);
-            List<Employee> listItems =as.generateQuery();
+            Sales_by_Date sales_query=new Sales_by_Date(startDateFormat,endDateFormat);
+            List<Employee> listItems =sales_query.generateQuery();
             		//new ArrayList<Employee>();
 /*
             // Create Employee objects with db info
@@ -97,17 +85,17 @@ public class JasperByCollectionBeanData {
             Map<String, Object> parameters = new HashMap<String, Object>();
             //parameters.put("CollectionBeanParam",fechas);
             parameters.put("CollectionBeanParam", itemsJRBean);
-            /*parameters.put("month_start",month_start);
+            parameters.put("month_start",month_start);
             parameters.put("year_start",year_start);
             parameters.put("month_end",month_end);
-            parameters.put("year_end",year_end);*/
+            parameters.put("year_end",year_end);
             parameters.put("REPORT_DIR", imagePath);
             parameters.put("REPORT_DIR2", imagePath2);
             
             //read jrxml file and creating jasperdesign object
             //InputStream input = getClass().getResourceAsStream("../formatos/Coffee_Landscape_Table_Based.jrxml");
             //InputStream input = getClass().getResourceAsStream("/formatos/Coffee_Landscape_Table_Based.jrxml");
-            InputStream input = getClass().getClassLoader().getResourceAsStream("formatos/Inventario-Proveedores.jrxml");
+            InputStream input = getClass().getClassLoader().getResourceAsStream("formatos/Ventas-periodo.jrxml");
 
             JasperDesign jasperDesign = JRXmlLoader.load(input);
   

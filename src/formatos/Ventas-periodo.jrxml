@@ -58,10 +58,10 @@
 		<queryString>
 			<![CDATA[]]>
 		</queryString>
-		<field name="id" class="java.lang.String"/>
-		<field name="producto" class="java.lang.String"/>
-		<field name="fecha" class="java.lang.String"/>
-		<field name="cantidad" class="java.lang.String"/>
+		<field name="column1" class="java.lang.String"/>
+		<field name="column2" class="java.lang.String"/>
+		<field name="column3" class="java.lang.String"/>
+		<field name="column4" class="java.lang.String"/>
 	</subDataset>
 	<parameter name="CollectionBeanParam" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
 	<parameter name="month_start" class="java.lang.String"/>
@@ -190,7 +190,7 @@
 								<textElement textAlignment="Justified" verticalAlignment="Middle">
 									<font fontName="Arial" size="12"/>
 								</textElement>
-								<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{column1}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -212,7 +212,7 @@
 								<textElement textAlignment="Justified" verticalAlignment="Middle">
 									<font fontName="Arial" size="12"/>
 								</textElement>
-								<textFieldExpression><![CDATA[$F{producto}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{column2}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -234,7 +234,7 @@
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Arial" size="12"/>
 								</textElement>
-								<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{column3}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -257,7 +257,7 @@
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Arial" size="12"/>
 								</textElement>
-								<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{column4}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>

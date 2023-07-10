@@ -2,10 +2,10 @@ package createReports;
 
 public class Employee
 {
-    private String id; //integer 
-    private String producto;
-    private String fecha;    
-    private String cantidad;
+    private String column1; //Jasper parameter field name 
+    private String column2;
+    private String column3;    
+    private String column4;
     
     private int year_end;    
     private int year_start;
@@ -27,21 +27,21 @@ public class Employee
 		this.lastName = lastName;
 	}
 	*/
-	public void setID(String id) {
-		this.id = id;
+    
+    //Dinamic DB Information
+	public void setColumn1(String id) {
+		column1 = id;
 	}
-        public void setProducto(String producto) {
-		this.producto = producto;
+        public void setColumn2(String producto) {
+        column2 = producto;
 	}
-        public void setFecha(String fecha) {
-		this.fecha = fecha;
+        public void setColumn3(String fecha) {
+    	column3 = fecha;
 	}
-        public void setCantidad(String cantidad) {
-		this.cantidad = cantidad;
+        public void setColumn4(String cantidad) {
+        column4 = cantidad;
 	}
-        
-        
-        
+          
         public void setMonthstart(String monthstart) {
 		month_start = monthstart;
 	}
@@ -55,18 +55,18 @@ public class Employee
 		year_end = yearend;
 	}
         
-        
-        public String getId() {
-		return id;
+    //Find information jasper to compile need get+MAYUS+yourfieldname
+        public String getColumn1() {
+		return column1;
 	}
-        public String getProducto() {
-		return producto;
+        public String getColumn2() {
+		return column2;
 	}
-        public String getFecha() {
-		return fecha;
+        public String getColumn3() {
+		return column3;
 	}
-        public String getCantidad() {
-		return cantidad;
+        public String getColumn4() {
+		return column4;
 	}
         
         

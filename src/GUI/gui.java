@@ -1,5 +1,8 @@
 package GUI;
 import javax.swing.*;
+
+import createReports.Inventory_Suppliers;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -43,7 +46,8 @@ public class gui extends JFrame implements ActionListener {
         btnOption1.addActionListener(this);
         optionsPanel.add(btnOption1);
 
-        btnOption2 = new JButton("Opción 2");
+        btnOption2 = new JButton("Invenatario, Proveedor y Contacto");
+        btnOption2.addActionListener(this);
         optionsPanel.add(btnOption2);
 
         btnOption3 = new JButton("Opción 3");
@@ -68,6 +72,10 @@ public class gui extends JFrame implements ActionListener {
 		if(e.getSource()==btnOption1) {
 			showDateSelectionDialog selectOnSelectedDates=new showDateSelectionDialog();
 			selectOnSelectedDates.setVisible(true);
+		}
+		if(e.getSource()==btnOption2) {
+			Inventory_Suppliers reporteInventario=new Inventory_Suppliers();
+			reporteInventario.GenerarReportes();
 		}
 	}
 }
