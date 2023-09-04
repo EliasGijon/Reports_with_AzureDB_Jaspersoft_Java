@@ -24,9 +24,9 @@ import backimg.JP_IMG;
 
 public class Frame_Insert_Data extends JFrame {
 	private static final long serialVersionUID = 1L;
-	private JLabel lblWelcome;
-    private JLabel lblInstruccion;
-    private JLabel lblFooter;
+	private JLabel lbl_Welcome;
+    private JLabel lbl_Instruccion;
+    private JLabel lbl_Footer;
     
     private JPanel panel_general;
     
@@ -70,7 +70,7 @@ public class Frame_Insert_Data extends JFrame {
         panel_Norte.setBackground(colors[2]);
         panel_Norte.setOpaque(false);
 
-        setPanel_Contenido(new JPanel(new GridLayout(2, 1, 10, 10)));
+        setPanel_Contenido(new JPanel(new BorderLayout()));
         getPanel_Contenido().setBorder(new EmptyBorder(10, 10, 10, 10));
         getPanel_Contenido().setBackground(c);
         getPanel_Contenido().setOpaque(false);
@@ -79,58 +79,29 @@ public class Frame_Insert_Data extends JFrame {
         panel_Inferior.setBackground(colors[0]);
         //panel_Inferior.setOpaque(false);
         
-        lblWelcome = new JLabel("Bienvenido");
-        lblWelcome.setFont(new Font("Arial", Font.BOLD, 20));
-        lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
+        lbl_Welcome = new JLabel("Bienvenido");
+        lbl_Welcome.setFont(new Font("Arial", Font.BOLD, 20));
+        lbl_Welcome.setHorizontalAlignment(SwingConstants.CENTER);
         
-        lblInstruccion = new JLabel("<html><div style='text-align: center;'>Desde este apartado puedes realizar reportes, "
+        lbl_Instruccion = new JLabel("<html><div style='text-align: center;'>Desde este apartado puedes realizar reportes, "
                 + "selecciona la opciones que deses</div></html>");
-        lblInstruccion.setFont(new Font("Arial", Font.PLAIN, 16));
-        lblInstruccion.setHorizontalAlignment(SwingConstants.CENTER);
+        lbl_Instruccion.setFont(new Font("Arial", Font.PLAIN, 16));
+        lbl_Instruccion.setHorizontalAlignment(SwingConstants.CENTER);
 
         
-        lblFooter = new JLabel("Computo en la nube equipo cinco");
-        lblFooter.setFont(new Font("Arial", Font.PLAIN, 12));
-        lblFooter.setHorizontalAlignment(SwingConstants.CENTER);
-        //lblFooter.repaint(); // Repaint the component
-       
-
-        /*
-        
-        Data getData=new Data();
-        getData.queryTable("stationery_shop");
-        getData.printTuples();
-        
-        String[] a = getData.getColumn(0);
-        
-        getData.queryTable("service");
-        getData.printTuples();
-        
-        
-        DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>(a);
-       
-        JComboBox<String> sucursal=new JComboBox<String>(model);
-        
-       
-        
-        
-        String[] b = getData.getColumn(0);
-        print(a);
-        print(b);
-        
-        getData.queryTable("supplier");
-        getData.printTuples();           
- */
+        lbl_Footer = new JLabel("Programa elaborado por Elias Gijón");
+        lbl_Footer.setFont(new Font("Arial", Font.PLAIN, 12));
+        lbl_Footer.setHorizontalAlignment(SwingConstants.CENTER);
 
         panel_general.add(panel_Norte,BorderLayout.NORTH);
         panel_general.add(getPanel_Contenido(), BorderLayout.CENTER);
         panel_general.add(panel_Inferior,BorderLayout.SOUTH);
         
-        panel_Norte.add(lblWelcome, BorderLayout.NORTH);
-        panel_Norte.add(lblInstruccion, BorderLayout.CENTER);
+        panel_Norte.add(lbl_Welcome, BorderLayout.NORTH);
+        panel_Norte.add(lbl_Instruccion, BorderLayout.CENTER);
         
         //panel_Contenido.add(sucursal,BorderLayout.CENTER);
-        panel_Inferior.add(lblFooter, BorderLayout.SOUTH);
+        panel_Inferior.add(lbl_Footer, BorderLayout.SOUTH);
         
 
         JP_BG_IMG.add(panel_general,BorderLayout.CENTER);
@@ -140,6 +111,20 @@ public class Frame_Insert_Data extends JFrame {
 		for(String a:xd) {
 			System.out.println(a);
 		}			
+	}
+	
+	
+	public JLabel getlbl_Instruccion(){
+		return lbl_Instruccion;
+	}
+	public void setlbl_Instruccion(JLabel lbl_Instruccion) {
+		this.lbl_Instruccion = lbl_Instruccion;
+	}
+	public JLabel getlbl_Welcome(){
+		return lbl_Welcome;
+	}
+	public void setlbl_Welcome(JLabel lbl_Welcome) {
+		this.lbl_Welcome = lbl_Welcome;
 	}
 	
 	public JPanel getPanel_Contenido(){
