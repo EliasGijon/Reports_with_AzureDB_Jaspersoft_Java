@@ -20,6 +20,10 @@ public class Query_Products extends Frame_Insert_Data implements ActionListener{
 	private JPanel panel_Contenido;
 	private JComboBox<String> sucursal;
 	private List<TextField> nTextFields;
+	
+	private JLabel lbl_Welcome;
+    private JLabel lbl_Instruccion;
+	
 	private Data getData;
 	
 	
@@ -27,6 +31,9 @@ public class Query_Products extends Frame_Insert_Data implements ActionListener{
 		super();
 		panel_Contenido=getPanel_Contenido();
 		
+		lbl_Welcome=getlbl_Welcome();
+	    lbl_Instruccion= getlbl_Instruccion();
+	    
 		addComponents();
 		
 		setPanel_Contenido(panel_Contenido);
@@ -36,7 +43,10 @@ public class Query_Products extends Frame_Insert_Data implements ActionListener{
 		nTextFields = new ArrayList<>();
 	    getData=new Data();
 	    
-	    Data getSpecificData =new  Data("select p.product_id as ID, name as Nombre, price as Precio, stationery_id as 'Numero de Tienda', existence as Existencias"
+	    lbl_Welcome.setText("Inventario");
+		lbl_Instruccion.setText("Te encuentras en la interfaz donde puedes ver todos tus productos");
+	    
+	    Data getSpecificData =new  Data("select p.product_id as ID, name as Nombre, price as Precio, existence as Existencias,  stationery_id as 'Numero de Tienda'"
 	    		+" from product as p inner join existence_p_001 as ex"
 	    		+" on p.product_id=ex.product_id");
 	    
@@ -115,9 +125,7 @@ public class Query_Products extends Frame_Insert_Data implements ActionListener{
 	        int selectedOption = sucursal.getSelectedIndex();
 	        
 	        String[] registro = getData.getRows().get(selectedOption);
-	        for(int i=1;i<registro.length;i++) {
-	        	System.out.println(registro[i-1]);
-	        	
+	        for(int i=1;i<registro.length;i++) {	        	
 	        	//Edicion de Textfields Dinamicos evitando desbordamiento de index
 	        	nTextFields.get(i-1).setText(registro[i]);
 	        	//panel_Contenido.repaint();

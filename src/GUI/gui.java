@@ -2,6 +2,8 @@ package GUI;
 import javax.swing.*;
 
 import createReports.Inventory_Suppliers;
+import sql_Insertpack.Insert_Products;
+import sql_Insertpack.Query_Products;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -46,19 +48,22 @@ public class gui extends JFrame implements ActionListener {
         btnOption1.addActionListener(this);
         optionsPanel.add(btnOption1);
 
-        btnOption2 = new JButton("Invenatario, Proveedor y Contacto");
+        btnOption2 = new JButton("Proveedor y Contacto");
         btnOption2.addActionListener(this);
         optionsPanel.add(btnOption2);
 
-        btnOption3 = new JButton("Opción 3");
+        btnOption3 = new JButton("Inventario");
+        btnOption3.addActionListener(this);
+
         optionsPanel.add(btnOption3);
 
-        btnOption4 = new JButton("Opción 4");
+        btnOption4 = new JButton("Insertar Productos");
+        btnOption4.addActionListener(this);
         optionsPanel.add(btnOption4);
 
         panel.add(optionsPanel, BorderLayout.CENTER);
 
-        JLabel lblFooter = new JLabel("Computo en la nube equipo cinco");
+        JLabel lblFooter = new JLabel("Programa elaborado por Elias Gijón");
         lblFooter.setFont(new Font("Arial", Font.PLAIN, 12));
         lblFooter.setHorizontalAlignment(SwingConstants.CENTER);
         panel.add(lblFooter, BorderLayout.SOUTH);
@@ -76,6 +81,16 @@ public class gui extends JFrame implements ActionListener {
 		if(e.getSource()==btnOption2) {
 			Inventory_Suppliers reporteInventario=new Inventory_Suppliers();
 			reporteInventario.GenerarReportes();
+		}
+		if(e.getSource()==btnOption3) {
+			dispose();
+			Query_Products queryProducts=new Query_Products();
+			queryProducts.setVisible(true);
+		}
+		if(e.getSource()==btnOption4) {
+			dispose();
+			Insert_Products AddProducts=new Insert_Products();
+			AddProducts.setVisible(true);
 		}
 	}
 }

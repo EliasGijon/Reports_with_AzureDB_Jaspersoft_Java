@@ -192,7 +192,6 @@ public class Data  {
                 if (connection != null) {
                     // Restablecer el modo de autocommit
                     connection.setAutoCommit(true);
-                    connection.close();
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
